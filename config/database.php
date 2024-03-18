@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +30,26 @@ return [
     */
 
     'connections' => [
+        
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '27017'),
+            'dsn' => env('DB_DSN'),
+            'database' => env('DB_DATABASE', 'locavibe'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', '123456'),
+            'options' => [],
+        ],
+
+        'ileva_db' => [
+            'driver' => 'mysql',
+            'host' => env('ILEVA_DB_HOST', ''),
+            'port' => env('ILEVA_DB_PORT', '3306'),
+            'database' => env('ILEVA_DB_DATABASE', ''),
+            'username' => env('ILEVA_DB_USERNAME', ''),
+            'password' => env('ILEVA_DB_PASSWORD', ''),
+        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
